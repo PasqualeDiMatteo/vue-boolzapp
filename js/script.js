@@ -16,7 +16,7 @@ const app = createApp({
   data() {
     return {
       user: {
-        name: "Nome Utente",
+        name: "Pasquale",
         avatar: "_io",
       },
       contacts: [
