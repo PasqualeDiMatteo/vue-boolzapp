@@ -159,9 +159,33 @@ main section {
     background-image: url('../img/mine.jpg');
     height: calc(100% - 200px);
     overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Chat Footer */
- footer textarea{
-    resize: none;
+.chat .message{
+    width: 40%;
+    padding: 15px 10px 10px;
+    margin: 1rem 1rem;
+}
+
+.message.send{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+    border-radius: 15px 15px 0 15px;
+}
+
+.message.received{
+   background-color: white;
+   border-radius: 0 15px 15px 15px;
+}
+
+.message .date{
+    text-align: right;
+    color: lightgrey;
  }
+
+/* Chat Footer */
+footer textarea{
+    resize: none;
+}
