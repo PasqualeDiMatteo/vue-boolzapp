@@ -23,6 +23,7 @@ header {
 }
 
 /* Footer */
+
 footer {
     height: 100px;
     background-color: #f3eeea;
@@ -50,6 +51,8 @@ main section {
     flex-direction: column;
 }
 
+/* Contacts Header*/
+
 .info-user {
     display: flex;
     padding: .5rem;
@@ -69,6 +72,8 @@ main section {
 .profile-buttons i{
     cursor: pointer;
 }
+
+/* Notification */
 
 #contacts #notification {
     background-color:#8edafc;
@@ -104,21 +109,37 @@ main section {
     font-size: 13px;
 }
 
+/* Search Contact */
 
-#contacts #contacts-list{
+#search-contact{
+    padding: 5px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+#search-contact input{
+    width: 100%;
+    padding: 0 45px ;
+}
+
+#search-contact::before{
+    content: '\f002';
+    color: #777;
+    font: var(--fa-font-solid);
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+/* Contact List */
+
+#contacts-list{
     overflow: auto;
     background-color: white;
     flex-grow: 1;
 }
 
-#contacts #search-contact{
-    padding: 5px;
-    background-color: #fafafa;
-}
-
-#contacts #search-contact input{
-    width: 100%;
-}
 
 /* Chat */
 
@@ -126,6 +147,7 @@ main section {
     flex-basis: calc(100% / 3 * 2);
     background-image:url(../img/mine.jpg);
 }
+
 #chat .chat {
     background-image: url('../img/mine.jpg');
     height: calc(100% - 200px);
