@@ -17,7 +17,7 @@
 /* Header */
 
 header {
-    height: 150px;
+    height: 100px;
     background-color: #eaeaea;
     flex-shrink: 0;
 }
@@ -41,12 +41,33 @@ main section {
     height: 100%;
 }
 
+
 /* Contacts */
 
 #contacts {
     flex-basis: calc(100% / 3);
     display: flex;
     flex-direction: column;
+}
+
+.info-user {
+    display: flex;
+    padding: .5rem;
+    align-items: center;
+}
+
+.info-user .avatar img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+
+#contacts .profile-buttons{
+    color:#b1b1b1;
+}
+
+.profile-buttons i{
+    cursor: pointer;
 }
 
 #contacts #notification {
@@ -78,6 +99,6 @@ main section {
 }
 #chat .chat {
     background-image: url('../img/mine.jpg');
-    height: calc(100% - 250px);
+    height: calc(100% - 200px);
     overflow: auto;
 }
