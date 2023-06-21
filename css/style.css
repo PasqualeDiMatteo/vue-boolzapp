@@ -1,0 +1,36 @@
+/* UTILITIES */
+
+.background{
+    background-image: linear-gradient(180deg, rgba(0,150,136,1) 10%, rgba(217,219,213,1) 10%);
+    height:100vh;
+}
+
+.background>.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+main{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+main section {
+    height: 100%;
+}
+
+#contacts {
+    flex-basis: calc(100% / 3);
+    background-color: red;
+}
+
+#chat {
+    flex-basis: calc(100% / 3 * 2);
+    background-color: blue;
+}
