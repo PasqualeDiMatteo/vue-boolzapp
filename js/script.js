@@ -15,6 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      searchedContact: "",
       newMessage: "",
       activeContactId: 1,
       user: {
@@ -220,6 +221,13 @@ const app = createApp({
     // Active Contact
     activeContact() {
       return this.contacts.find(({ id }) => id === this.activeContactId);
+    },
+    // Filtered Contacts
+    filteredContacts() {
+      const term = this.searchedContact.toLowerCase();
+      return this.contacts.filter(({ name }) =>
+        name.toLowerCase().includes(term)
+      );
     },
   },
   // METHODS
