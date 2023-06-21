@@ -49,6 +49,7 @@ main section {
     flex-basis: calc(100% / 3);
     display: flex;
     flex-direction: column;
+    border-right: 1px solid lightgray;
 }
 
 /* Contacts Header*/
@@ -59,13 +60,13 @@ main section {
     align-items: center;
 }
 
-#contacts .avatar img {
+.avatar img {
     width: 60px;
     border-radius: 50%;
     margin-right: .5rem;
 }
 
-#contacts .profile-buttons{
+.profile-buttons{
     color:#b1b1b1;
 }
 
@@ -146,7 +147,6 @@ main section {
     padding: 10px 0;
 
 }
-
 
 /* Chat */
 
