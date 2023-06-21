@@ -15,6 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      activeContactId: 1,
       user: {
         name: "Pasquale",
         avatar: "_io",
@@ -212,6 +213,16 @@ const app = createApp({
         },
       ],
     };
+  },
+  computed: {
+    activeContact() {
+      return this.contacts.find(({ id }) => id === this.activeContactId);
+    },
+  },
+  methods: {
+    setActiveId(id) {
+      this.activeContactId = id;
+    },
   },
 });
 
