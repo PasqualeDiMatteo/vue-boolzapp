@@ -176,14 +176,14 @@ main section {
 }
 
 .message.received{
-   background-color: white;
-   border-radius: 0 15px 15px 15px;
+    background-color: white;
+    border-radius: 0 15px 15px 15px;
 }
 
 .message .date{
     text-align: right;
     color: lightgrey;
- }
+}
 
 /* Chat Footer */
 footer textarea{
