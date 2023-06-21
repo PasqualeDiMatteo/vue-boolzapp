@@ -59,7 +59,7 @@ main section {
     align-items: center;
 }
 
-.info-user .avatar img {
+#contacts .avatar img {
     width: 60px;
     border-radius: 50%;
     margin-right: .5rem;
@@ -138,6 +138,13 @@ main section {
     overflow: auto;
     background-color: white;
     flex-grow: 1;
+}
+#contacts-list li{
+    border-bottom: 1px solid lightgray;
+}
+.contact .name {
+    padding: 10px 0;
+
 }
 
 
