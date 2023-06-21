@@ -19,6 +19,13 @@
 header {
     height: 150px;
     background-color: #eaeaea;
+    flex-shrink: 0;
+}
+
+/* Footer */
+footer {
+    height: 100px;
+    background-color: #f3eeea;
 }
 
 /* Main */
@@ -45,6 +52,7 @@ main section {
 #contacts #notification {
     background-color:#8edafc;
     height: 150px;
+    flex-shrink: 0;
 }
 
 #contacts #contacts-list{
@@ -67,4 +75,9 @@ main section {
 #chat {
     flex-basis: calc(100% / 3 * 2);
     background-image:url(../img/mine.jpg);
+}
+#chat .chat {
+    background-image: url('../img/mine.jpg');
+    height: calc(100% - 250px);
+    overflow: auto;
 }
