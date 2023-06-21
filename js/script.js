@@ -15,6 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      newMessage: "",
       activeContactId: 1,
       user: {
         name: "Pasquale",
@@ -222,6 +223,19 @@ const app = createApp({
   methods: {
     setActiveId(id) {
       this.activeContactId = id;
+    },
+    addMessage() {
+      const message = this.newMessage;
+      const id = 4;
+      const date = "10/01/2020 15:51:00";
+      const status = "sent";
+      const justSentMessage = { id, date, message, status };
+      this.contacts.forEach((contact) => {
+        if (contact.id === this.activeContactId) {
+          contact.messages.push(justSentMessage);
+        }
+        this.newMessage = "";
+      });
     },
   },
 });

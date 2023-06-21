@@ -103,7 +103,7 @@
                         <div class="chat">
                             <div class="message" :class="message.status" v-for="message in activeContact.messages">
                                 <p class="message-text m-0">{{message.message}}</p>
-                                <p class="date m-0">10/01/2020 15:30:55</p>
+                                <p class="date m-0">{{message.date}}</p>
                             </div>
                         </div>
                         <!-- Footer -->
@@ -113,8 +113,8 @@
                                     <i class="fa-regular fa-face-smile fa-2xl"></i>
                                 </div>
                                 <div class="col-10">
-                                    <textarea class="form-control" rows="2"
-                                        placeholder="Scrivi un messaggio"></textarea>
+                                    <textarea v-model.trim="newMessage" class="form-control" rows="2"
+                                        placeholder="Scrivi un messaggio" @keyup.enter="addMessage()"></textarea>
                                 </div>
                                 <div class="col-1 text-center">
                                     <i class="fa-solid fa-microphone fa-2xl"></i>
