@@ -215,26 +215,42 @@ const app = createApp({
       ],
     };
   },
+  // COMPUTED
   computed: {
+    // Active Contact
     activeContact() {
       return this.contacts.find(({ id }) => id === this.activeContactId);
     },
   },
+  // METHODS
   methods: {
+    // Active Id
     setActiveId(id) {
       this.activeContactId = id;
     },
+    // Add Message
     addMessage() {
-      const message = this.newMessage;
-      const id = 4;
-      const date = "10/01/2020 15:51:00";
-      const status = "sent";
-      const justSentMessage = { id, date, message, status };
       this.contacts.forEach((contact) => {
         if (contact.id === this.activeContactId) {
-          contact.messages.push(justSentMessage);
+          contact.messages.push({
+            id: 5,
+            date: "10/01/2020 15:51:00",
+            message: this.newMessage,
+            status: "sent",
+          });
         }
         this.newMessage = "";
+        // Contact Response
+        setTimeout(() => {
+          if (contact.id === this.activeContactId) {
+            contact.messages.push({
+              id: 5,
+              date: "10/01/2020 15:51:00",
+              message: "Ok",
+              status: "received",
+            });
+          }
+        }, 1000);
       });
     },
   },
