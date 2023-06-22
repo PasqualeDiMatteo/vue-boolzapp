@@ -68,9 +68,20 @@
                                         <div class="avatar p-3">
                                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`${contact.name}`">
                                         </div>
-                                        <h5 class="name py-3">
-                                            {{contact.name}}
-                                        </h5>
+                                        <div>
+                                            <!-- Name -->
+                                            <h5 class="name py-2">
+                                                {{contact.name}}
+                                            </h5>
+                                            <!-- Last Message -->
+                                            <p class="text-secondary">
+                                                {{contact.messages[contact.messages.length-1].message}}
+                                            </p>
+                                            <!-- Last Date -->
+                                            <p class="my-1 text-black-50">
+                                                {{contact.messages[contact.messages.length-1].date}}
+                                            </p>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -85,10 +96,15 @@
                                 <div class="avatar ">
                                     <img :src="`img/avatar${activeContact.avatar}.jpg`" :alt="activeContact.name">
                                 </div>
-                                <div class="info-contact">
-                                    <h5 class="name p-0">{{activeContact.name}}</h5>
-                                    <div class="date">
-                                        Ultimo accesso oggi alle
+                                <div class="info-contact ">
+                                    <div>
+                                        <!-- Name -->
+                                        <h5 class="name p-0">{{activeContact.name}}</h5>
+                                        <!-- Date -->
+                                        <div class="date">
+                                            Ultimo accesso oggi alle
+                                            {{activeContact.messages[activeContact.messages.length-1].date}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +125,7 @@
                                 <p class="date m-0">{{message.date}}</p>
                                 <!-- DropDown -->
                                 <div class="dropdown text-end">
-                                    <i class="fa-solid fa-chevron-down " @click="setCurrentMessageID(message.id)"></i>
+                                    <i class="fa-solid fa-chevron-down " @click="setCurrentMessageId(message.id)"></i>
                                     <div class=" actions" v-show="(message.id === currentMessageId)">
                                         <button>Info Utili</button>
                                         <button @click="removeMessage(message.id)">Elimina messaggio</button>

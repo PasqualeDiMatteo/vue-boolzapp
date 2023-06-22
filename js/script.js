@@ -235,7 +235,7 @@ const app = createApp({
   // METHODS
   methods: {
     // Set Current Message Id
-    setCurrentMessageID(id) {
+    setCurrentMessageId(id) {
       this.currentMessageId = id;
     },
     // Remove message
