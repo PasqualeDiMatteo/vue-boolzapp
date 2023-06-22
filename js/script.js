@@ -15,6 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      clicked: true,
       currentMessageId: 0,
       searchedContact: "",
       newMessage: "",
