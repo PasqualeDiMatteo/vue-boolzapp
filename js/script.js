@@ -256,7 +256,7 @@ const app = createApp({
       const status = "sent";
       const justSentMessage = { id, date, message, status };
       this.contacts.forEach((contact) => {
-        if (contact.id === this.activeContactId && this.newMessage) {
+        if (contact.id === this.activeContactId && message) {
           contact.messages.push(justSentMessage);
         }
         this.newMessage = "";
