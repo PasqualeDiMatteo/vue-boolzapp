@@ -239,7 +239,7 @@ const app = createApp({
     // Add Message
     addMessage() {
       const message = this.newMessage;
-      const id = 4;
+      const id = new Date().getTime();
       const date = "10/01/2020 15:51:00";
       const status = "sent";
       const justSentMessage = { id, date, message, status };
@@ -252,7 +252,7 @@ const app = createApp({
         setTimeout(() => {
           if (contact.id === this.activeContactId) {
             contact.messages.push({
-              id: 5,
+              id: new Date().getTime(),
               date: "10/01/2020 15:51:00",
               message: "Ok",
               status: "received",
