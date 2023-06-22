@@ -256,13 +256,13 @@ const app = createApp({
       const status = "sent";
       const justSentMessage = { id, date, message, status };
       this.contacts.forEach((contact) => {
-        if (contact.id === this.activeContactId) {
+        if (contact.id === this.activeContactId && this.newMessage) {
           contact.messages.push(justSentMessage);
         }
         this.newMessage = "";
         // Contact Response
         setTimeout(() => {
-          if (contact.id === this.activeContactId) {
+          if (contact.id === this.activeContactId && message) {
             contact.messages.push({
               id: new Date().getTime(),
               date: "10/01/2020 15:51:00",
