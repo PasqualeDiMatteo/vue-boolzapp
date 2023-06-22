@@ -101,8 +101,11 @@
                         </header>
                         <!-- Main Chat -->
                         <div class="chat">
-                            <div class="message" :class="message.status" v-for="message in activeContact.messages">
-                                <p class="message-text m-0">{{message.message}}</p>
+                            <div class="message" :class="message.status" v-for="message in activeContact.messages"
+                                @click="setCurrentMessageID(message.id), removeMessage(message.id)" class="chatMessage">
+                                <p class="message-text m-0">
+                                    {{message.message}}
+                                </p>
                                 <p class="date m-0">{{message.date}}</p>
                             </div>
                         </div>

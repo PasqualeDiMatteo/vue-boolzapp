@@ -15,6 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      currentMessageId: 0,
       searchedContact: "",
       newMessage: "",
       activeContactId: 1,
@@ -232,10 +233,21 @@ const app = createApp({
   },
   // METHODS
   methods: {
+    // Set Current Message Id
+    setCurrentMessageID(id) {
+      this.currentMessageId = id;
+    },
+    // Remove message
+    removeMessage(target) {
+      this.activeContact.messages = this.activeContact.messages.filter(
+        (message) => target !== message.id
+      );
+    },
     // Active Id
     setActiveId(id) {
       this.activeContactId = id;
     },
+
     // Add Message
     addMessage() {
       const message = this.newMessage;
