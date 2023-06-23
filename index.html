@@ -125,8 +125,9 @@
                                 <p class="date m-0">{{message.date}}</p>
                                 <!-- DropDown -->
                                 <div class="dropdown text-end">
-                                    <i class="fa-solid fa-chevron-down " @click="setCurrentMessageId(message.id)"></i>
-                                    <div class=" actions" v-show="(message.id === currentMessageId)">
+                                    <i class="fa-solid fa-chevron-down "
+                                        @click="setCurrentMessageId(message.id), isClicked()"></i>
+                                    <div class=" actions" v-show="( message.id === currentMessageId && clicked)">
                                         <button>Info Utili</button>
                                         <button @click="removeMessage(message.id)">Elimina messaggio</button>
                                     </div>

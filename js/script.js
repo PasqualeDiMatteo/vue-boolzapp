@@ -15,7 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
-      clicked: true,
+      clicked: false,
       currentMessageId: 0,
       searchedContact: "",
       newMessage: "",
@@ -222,6 +222,7 @@ const app = createApp({
   computed: {
     // Active Contact
     activeContact() {
+      this.clicked = false;
       return this.contacts.find(({ id }) => id === this.activeContactId);
     },
     // Filtered Contacts
@@ -234,6 +235,14 @@ const app = createApp({
   },
   // METHODS
   methods: {
+    // Is Clicked
+    isClicked() {
+      if (this.clicked === false) {
+        this.clicked = true;
+      } else {
+        this.clicked = false;
+      }
+    },
     // Set Current Message Id
     setCurrentMessageId(id) {
       this.currentMessageId = id;
@@ -243,12 +252,12 @@ const app = createApp({
       this.activeContact.messages = this.activeContact.messages.filter(
         (message) => target !== message.id
       );
+      this.clicked = false;
     },
     // Active Id
     setActiveId(id) {
       this.activeContactId = id;
     },
-
     // Add Message
     addMessage() {
       const message = this.newMessage;
